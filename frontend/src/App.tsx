@@ -18,7 +18,7 @@ function App() {
 
   const fetchLinks = async () => {
     try {
-      const res = await fetch(`${API_BASE}/api/links`);
+      const res = await fetch(`${api_BASE}/api/links`);
       const data = await res.json();
       setLinks(data);
     } catch (err) {
@@ -35,7 +35,7 @@ function App() {
     setError("");
 
     try {
-      const res = await fetch(`${API_BASE}/api/links`, {
+      const res = await fetch(`${api_BASE}/api/links`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -60,7 +60,7 @@ function App() {
   };
 
   const deleteLink = async (code: string) => {
-    await fetch(`${API_BASE}/api/links/${code}`, {
+    await fetch(`${api_BASE}/api/links/${code}`, {
       method: "DELETE",
     });
     fetchLinks();
@@ -120,7 +120,7 @@ function App() {
               {links.map((link) => (
                 <tr key={link.code}>
                   <td className="border p-2 text-blue-600">
-                    <a href={`${API_BASE}/${link.code}`} target="_blank">
+                    <a href={`${api_BASE}/${link.code}`} target="_blank">
                       {link.code}
                     </a>
                   </td>
