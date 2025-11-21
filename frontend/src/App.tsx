@@ -7,7 +7,7 @@ interface LinkData {
   lastClicked: string | null;
 }
 
-const API_BASE = "http://localhost:5000";
+const api_BASE = "http://localhost:5000";
 
 function App() {
   const [links, setLinks] = useState<LinkData[]>([]);
